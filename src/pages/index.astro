@@ -1,16 +1,33 @@
 ---
-
+// component script
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 ---
 
+<!-- component template -->
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hello World</title>
+  </head>
+  <body>
+    <div>
+      <img
+        src={profilePicture}
+        alt="Profile picture"
+        width="100px"
+        height="100px"
+      />
+    </div>
+    <div>
+      <h1>Faur Katerine</h1>
+      <h2>VP of Engineering at Gooooooooogle</h2>
+      <p>
+        Helping developers be excellent and succeed at building scalable
+        products
+      </p>
+    </div>
+  </body>
 </html>
