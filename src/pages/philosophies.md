@@ -1,5 +1,8 @@
 ---
-layout: ../layouts/Main.astro
+layout: ../layouts/Blog.astro
+title: "My Guiding Philosophies"
+subtitle: "These are the philosophies that guide every decision and action I take."
+poster: "/images/philosohpies.jpg"
 ---
 
 - Be present and enjoy the now
