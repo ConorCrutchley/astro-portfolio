@@ -39,9 +39,6 @@
 </style>
 
 <script>
-  // Import from npm packages
-  import { titleCase } from "title-case";
-
   // Const variables
   const DARK_THEME_CLASS = "dark";
   const COLOUR_MODE = "COLOUR_MODE";
@@ -51,35 +48,6 @@
   // Elements
   const toggle = document.querySelector("button");
   const rootEl = document.documentElement;
-
-  // Initial colour taken from local storage
-  const getInitialColourMode = () => {
-    const previouslySavedColourMode = window.localStorage.getItem(COLOUR_MODE);
-
-    // If a returning user, return the previous colour mode
-    if (previouslySavedColourMode) return previouslySavedColourMode;
-
-    // If the user has it set up on their system to prefer dark mode, return dark
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-      return DARK_THEME;
-
-    // Otherwise return light
-    return LIGHT_THEME;
-  };
-
-  // Get the initial colour mode
-  const initialColourMode = getInitialColourMode();
-
-  // Log the initial colour mode
-  const title = titleCase(`The theme of our user is ${initialColourMode}`);
-  console.log(title);
-
-  // Set the initial colour mode
-  const setInitialColourMode = (mode: string) => {
-    if (mode === LIGHT_THEME) rootEl.classList.remove(DARK_THEME_CLASS);
-    else rootEl.classList.add(DARK_THEME_CLASS);
-  };
-  setInitialColourMode(initialColourMode);
 
   // Handle the cutton click
   if (toggle) {

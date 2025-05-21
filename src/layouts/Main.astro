@@ -19,6 +19,48 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      // Things to know about inline scripts:
+      // Won't import NPM
+      // TypeScript won't work, JavaScript only
+      // Added multiple times if component is repeated
+      // Gets processed staight away, isn't deferred like regular scripts
+
+      // Const variables
+      const DARK_THEME_CLASS = "dark";
+      const COLOUR_MODE = "COLOUR_MODE";
+      const LIGHT_THEME = "LIGHT_THEME";
+      const DARK_THEME = "DARK_THEME";
+
+      // Elements
+      const rootEl = document.documentElement;
+
+      // Initial colour taken from local storage
+      const getInitialColourMode = () => {
+        const previouslySavedColourMode =
+          window.localStorage.getItem(COLOUR_MODE);
+
+        // If a returning user, return the previous colour mode
+        if (previouslySavedColourMode) return previouslySavedColourMode;
+
+        // If the user has it set up on their system to prefer dark mode, return dark
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          return DARK_THEME;
+
+        // Otherwise return light
+        return LIGHT_THEME;
+      };
+
+      // Get the initial colour mode
+      const initialColourMode = getInitialColourMode();
+
+      // Set the initial colour mode
+      const setInitialColourMode = (mode) => {
+        if (mode === LIGHT_THEME) rootEl.classList.remove(DARK_THEME_CLASS);
+        else rootEl.classList.add(DARK_THEME_CLASS);
+      };
+      setInitialColourMode(initialColourMode);
+    </script>
   </head>
   <body>
     <main>
