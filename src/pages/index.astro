@@ -3,6 +3,11 @@
 import Cards from "../components/Cards.astro";
 import Main from "../layouts/Main.astro";
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
+const blogs = await Astro.glob<{
+  title: string;
+  poster: string;
+  subtitle: string;
+}>("../pages/blogs/*.md");
 ---
 
 <Main title="Frau Katerina">
@@ -52,20 +57,15 @@ const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
     </p>
   </div>
   <ol class="blogs">
-    <li class="blogs__list">
-      <a href="blogs/typescript-is-the-new-javascript" class="blog__link"
-        >TypeScript is the new JavaScript</a
-      >
-    </li>
-    <li class="blogs__list">
-      <a href="blogs/rust-javascript-tooling" class="blog__link"
-        >Why Rust is the future of JavaScript tooling</a
-      >
-    </li>
-    <li class="blogs__list">
-      <a href="blogs/sleep-more" class="blog__link">Why you should sleep more</a
-      >
-    </li>
+    {
+      blogs.map((blog) => (
+        <li class="blogs__list">
+          <a href={blog.url} class="blog__link">
+            {blog.frontmatter.title}
+          </a>
+        </li>
+      ))
+    }
   </ol>
 </Main>
 
