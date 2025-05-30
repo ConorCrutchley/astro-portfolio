@@ -2,7 +2,7 @@
 
 This is different to my portfolio site (the Git repository for that can be found at https://github.com/ConorCrutchley/Conor-Crutchley-Portfolio).
 
-The astro portfolio is the follow along project created to coincide with the ["AstroJS 101: Build Blazing Fast Frondends!"](https://www.udemy.com/course/astrojs-101-build-blazing-fast-frontends/) course on Udemy.
+The astro portfolio is the follow along project created to coincide with the ["AstroJS 101: Build Blazing Fast Frondends!"](https://www.udemy.com/course/astrojs-101-build-blazing-fast-frontends/) course on Udemy. It covers the basics of Astro including Astro components, pages written as both AStro components and in Markdown, scripts and styling within Astro.
 
 # Astro Starter Kit: Minimal
 
